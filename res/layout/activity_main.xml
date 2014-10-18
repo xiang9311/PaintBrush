@@ -1,0 +1,471 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/FrameLayout1"
+    style="@style/AppBaseTheme"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <com.example.PaintBrush.BrushView
+        android:id="@+id/brushView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+    
+    <LinearLayout 
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="right"
+        android:orientation="horizontal">
+        
+        <LinearLayout
+	        android:id="@+id/LinearLayout2"
+	        android:layout_width="wrap_content"
+	        android:layout_height="fill_parent"
+	        android:layout_gravity="right"
+	        android:gravity="center"
+	        android:alpha="0.7"
+	        android:visibility="gone"
+	        android:orientation="vertical" >
+	        
+            <!-- 图元选择 -->
+            <HorizontalScrollView 
+                android:id="@+id/HSV_select"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:visibility="invisible"
+                android:scrollbars="none">"
+	        <LinearLayout
+	            android:id="@+id/linearlayout_select"
+	            android:background="@color/snow"
+	            android:visibility="invisible"
+	            android:layout_height="wrap_content"
+	            android:layout_width="wrap_content">
+	            
+	            <ImageButton 
+	                android:id="@+id/btn_brush"
+	                android:layout_width="wrap_content"
+	                android:layout_height="wrap_content"
+	                style="@style/btn"
+	                android:src="@drawable/brush"/>
+	            
+	            <ImageButton 
+	                android:id="@+id/btn_line"
+	                android:layout_width="wrap_content"
+	                android:layout_height="wrap_content"
+	                style="@style/btn"
+	                android:src="@drawable/line"/>
+	            
+	            <ImageButton
+	                android:id="@+id/btn_broken"
+	                android:layout_width="wrap_content"
+	                android:layout_height="wrap_content"
+	                style="@style/btn"
+	                android:src="@drawable/broken"/>
+	            
+	            <ImageButton 
+	                android:id="@+id/btn_rect"
+	                android:layout_width="wrap_content"
+	                android:layout_height="wrap_content"
+	                style="@style/btn"
+	                android:src="@drawable/rect"/>
+	            <ImageButton 
+	                android:id="@+id/btn_circle"
+	                android:layout_width="wrap_content"
+	                android:layout_height="wrap_content"
+	                style="@style/btn"
+	                android:src="@drawable/circle"/>
+	            <ImageButton 
+	                android:id="@+id/btn_oval"
+	                android:layout_width="wrap_content"
+	                android:layout_height="wrap_content"
+	                style="@style/btn"
+	                android:src="@drawable/oral"/>
+	            <!-- 这里椭圆应该是oval -->
+	            
+	        </LinearLayout>
+	        </HorizontalScrollView>
+	        <!-- 颜色 -->
+	        
+            <HorizontalScrollView 
+                android:id="@+id/HSV_color"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:visibility="invisible"
+                android:scrollbars="none">"
+	        <LinearLayout
+	            android:id="@+id/linearlayout_color"
+	            android:background="@color/snow"
+	            android:visibility="invisible"
+	            android:layout_height="wrap_content"
+	            android:layout_width="wrap_content">
+	            
+	            <ImageButton 
+	                android:id="@+id/btn_black"
+	                android:layout_width="wrap_content"
+	                android:layout_height="wrap_content"
+	                style="@style/btn"
+	                android:src="@drawable/black"/>
+	            
+	            <ImageButton 
+	                android:id="@+id/btn_red"
+	                android:layout_width="wrap_content"
+	                android:layout_height="wrap_content"
+	                style="@style/btn"
+	                android:src="@drawable/red"/>
+	            
+	            <ImageButton 
+	                android:id="@+id/btn_orange"
+	                android:layout_width="wrap_content"
+	                android:layout_height="wrap_content"
+	                style="@style/btn"
+	                android:src="@drawable/orange"/>
+	            <ImageButton 
+	                android:id="@+id/btn_yellow"
+	                android:layout_width="wrap_content"
+	                android:layout_height="wrap_content"
+	                style="@style/btn"
+	                android:src="@drawable/yellow"/>
+	            <ImageButton 
+	                android:id="@+id/btn_green"
+	                android:layout_width="wrap_content"
+	                android:layout_height="wrap_content"
+	                style="@style/btn"
+	                android:src="@drawable/green"/>
+	            <ImageButton 
+	                android:id="@+id/btn_blue"
+	                android:layout_width="wrap_content"
+	                android:layout_height="wrap_content"
+	                style="@style/btn"
+	                android:src="@drawable/blue"/>
+	            <ImageButton 
+	                android:id="@+id/btn_blues"
+	                android:layout_width="wrap_content"
+	                android:layout_height="wrap_content"
+	                style="@style/btn"
+	                android:src="@drawable/blues"/>
+	            <ImageButton
+	                android:id="@+id/btn_purple"
+	                android:layout_width="wrap_content"
+	                android:layout_height="wrap_content"
+	                style="@style/btn"
+	                android:src="@drawable/purple"/>
+	            
+	        </LinearLayout>
+	        </HorizontalScrollView>
+            <!-- 笔宽 -->
+            <HorizontalScrollView 
+                android:id="@+id/HSV_stroke"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:visibility="invisible"
+                android:scrollbars="none">"
+	        <LinearLayout
+	            android:id="@+id/linearlayout_stroke"
+	            android:background="@color/snow"
+	            android:visibility="invisible"
+	            android:layout_height="wrap_content"
+	            android:layout_width="wrap_content">
+	            
+	            
+	            <ImageButton 
+	                android:id="@+id/btn_stroke1"
+	                android:layout_width="wrap_content"
+	                android:layout_height="wrap_content"
+	                style="@style/btn"
+	                android:src="@drawable/stroke1"/>
+	            
+	            <ImageButton 
+	                android:id="@+id/btn_stroke2"
+	                android:layout_width="wrap_content"
+	                android:layout_height="wrap_content"
+	                style="@style/btn"
+	                android:src="@drawable/stroke2"/>
+	            
+	            <ImageButton 
+	                android:id="@+id/btn_stroke3"
+	                android:layout_width="wrap_content"
+	                android:layout_height="wrap_content"
+	                style="@style/btn"
+	                android:src="@drawable/stroke3"/>
+	            <ImageButton 
+	                android:id="@+id/btn_stroke4"
+	                android:layout_width="wrap_content"
+	                android:layout_height="wrap_content"
+	                style="@style/btn"
+	                android:src="@drawable/stroke4"/>
+	            <ImageButton 
+	                android:id="@+id/btn_stroke5"
+	                android:layout_width="wrap_content"
+	                android:layout_height="wrap_content"
+	                style="@style/btn"
+	                android:src="@drawable/stroke5"/>
+	            
+				<ImageButton 
+	                android:id="@+id/btn_stroke6"
+	                android:layout_width="wrap_content"
+	                android:layout_height="wrap_content"
+	                style="@style/btn"
+	                android:src="@drawable/stroke6"/>
+	            
+	            <ImageButton 
+	                android:id="@+id/btn_stroke7"
+	                android:layout_width="wrap_content"
+	                android:layout_height="wrap_content"
+	                style="@style/btn"
+	                android:src="@drawable/stroke7"/>
+	            
+	            
+	        </LinearLayout>
+	        </HorizontalScrollView>
+	        
+            <!-- xiangpi -->
+	        <LinearLayout
+	            android:id="@+id/linearlayout_eraser"
+	            android:background="@color/snow"
+	            android:visibility="invisible"
+	            android:layout_height="wrap_content"
+	            android:layout_width="wrap_content">
+	            
+	            <ImageButton 
+	                android:layout_width="wrap_content"
+	                android:layout_height="wrap_content"
+	                style="@style/btn"
+	                android:src="@drawable/brush"/>
+	            <ImageButton 
+	                android:layout_width="wrap_content"
+	                android:layout_height="wrap_content"
+	                style="@style/btn"
+	                android:src="@drawable/brush"/>
+	            <ImageButton 
+	                android:layout_width="wrap_content"
+	                android:layout_height="wrap_content"
+	                style="@style/btn"
+	                android:src="@drawable/brush"/>
+	            <ImageButton 
+	                android:layout_width="wrap_content"
+	                android:layout_height="wrap_content"
+	                style="@style/btn"
+	                android:src="@drawable/brush"/>
+	            <ImageButton 
+	                android:layout_width="wrap_content"
+	                android:layout_height="wrap_content"
+	                style="@style/btn"
+	                android:src="@drawable/brush"/>
+
+	            
+	        </LinearLayout>
+            <!-- tianchong -->
+	        <LinearLayout
+	            android:id="@+id/linearlayout_fill"
+	            android:background="@color/snow"
+	            android:visibility="invisible"
+	            android:layout_height="wrap_content"
+	            android:layout_width="wrap_content">
+	            
+	            <ImageButton 
+	                android:layout_width="wrap_content"
+	                android:layout_height="wrap_content"
+	                style="@style/btn"
+	                android:src="@drawable/brush"/>
+	            
+	           
+	            
+	        </LinearLayout>
+            <!-- 列表  -->
+            <HorizontalScrollView 
+                android:id="@+id/HSV_list"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/snow"
+                android:visibility="invisible"
+                android:scrollbars="none">
+           
+		        <LinearLayout
+		            android:id="@+id/linearlayout_list"
+		            android:background="@color/snow"
+		            android:visibility="invisible"
+		            android:orientation = "horizontal"
+		            android:gravity="center_vertical"
+		            android:layout_height="wrap_content"
+		            android:layout_width="wrap_content"> 
+
+	            	<ImageButton 
+		                android:layout_width="wrap_content"
+		                android:layout_height="wrap_content"
+		                style="@style/btn"
+		                android:src="@drawable/black"/>
+	            
+	  
+	        </LinearLayout>
+	        </HorizontalScrollView>
+            <!-- 工具 -->
+	        <LinearLayout
+	            android:id="@+id/linearlayout_tool"
+	            android:background="@color/snow"
+	            android:visibility="invisible"
+	            android:layout_gravity="right"
+	            android:layout_height="wrap_content"
+	            android:layout_width="wrap_content">
+	            
+	            <ImageButton 
+	                android:id="@+id/btn_undo"
+	                android:layout_width="wrap_content"
+	                android:layout_height="wrap_content"
+	                style="@style/btn"
+	                android:src="@drawable/undo"/>
+	            
+	            <ImageButton 
+	                android:id="@+id/btn_redo"
+	                android:layout_width="wrap_content"
+	                android:layout_height="wrap_content"
+	                style="@style/btn"
+	                android:src="@drawable/redo"/>
+	            
+	            <ImageButton 
+	                android:id="@+id/btn_save"
+	                android:layout_width="wrap_content"
+	                android:layout_height="wrap_content"
+	                style="@style/btn"
+	                android:src="@drawable/save"/>
+	            <ImageButton 
+	                android:id="@+id/btn_clean"
+	                android:layout_width="wrap_content"
+	                android:layout_height="wrap_content"
+	                style="@style/btn"
+	                android:src="@drawable/clean"/>
+	            
+	        </LinearLayout>
+	        
+        </LinearLayout>
+
+	    <LinearLayout
+	        android:id="@+id/LinearLayout1"
+	        android:layout_width="wrap_content"
+	        android:layout_height="fill_parent"
+	        android:layout_gravity="right"
+	        android:gravity="center"
+	        android:alpha="0.7"
+	        android:background="@color/snow"
+	        android:orientation="vertical" >
+	                
+	        <ImageButton
+		        android:id="@+id/button_select"
+		        style="@style/btn"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:src="@drawable/select" />
+	        
+	        
+	        <ImageButton
+	            android:id="@+id/button_color"
+	            style="@style/btn"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:src="@drawable/color" />
+	        
+	        
+	        <ImageButton
+	            android:id="@+id/button_stroke"
+	            style="@style/btn"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:src="@drawable/stroke" />
+	
+	        <ImageButton
+	            android:id="@+id/button_eraser"
+	            style="@style/btn"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:src="@drawable/eraser" />
+	
+	        <ImageButton
+	            android:id="@+id/button_fill"
+	            style="@style/btn"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:src="@drawable/fill" />
+	
+	        <ImageButton
+	            android:id="@+id/button_list"
+	            style="@style/btn"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:src="@drawable/list" />
+	
+	        <ImageButton
+	            android:id="@+id/button_tool"
+	            style="@style/btn"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:src="@drawable/setting" />
+	
+	    </LinearLayout>
+	    
+	    
+	    
+	</LinearLayout>
+    
+    <!-- 底部的操作栏 包括缩放旋转复制删除 -->
+    
+    <LinearLayout 
+        android:id="@+id/ll_action"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:orientation="horizontal"
+        android:layout_gravity="bottom">
+	    
+        
+        <TableRow 
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:numColumns="6"
+            android:stretchMode="columnWidth"
+            android:gravity="center">
+	        
+            <ImageButton 
+	            android:id="@+id/ib_small"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            style="@style/bottom_iv"
+	            android:src="@drawable/zoom_out"
+	            android:background="@color/white"/>
+            <ImageButton 
+	            android:id="@+id/ib_big"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            style="@style/bottom_iv"
+	            android:src="@drawable/zoom_in"
+	            android:background="@color/white"/>
+            <ImageButton 
+	            android:id="@+id/ib_rotationl"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            style="@style/bottom_iv"
+	            android:src="@drawable/rotation_ccw"
+	            android:background="@color/white"/>
+            <ImageButton 
+	            android:id="@+id/ib_rotationr"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            style="@style/bottom_iv"
+	            android:src="@drawable/rotation_cw"
+	            android:background="@color/white"/>
+            <ImageButton 
+	            android:id="@+id/ib_copy"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            style="@style/bottom_iv"
+	            android:src="@drawable/tab_duplicate"
+	            android:background="@color/white"/>
+            <ImageButton 
+	            android:id="@+id/ib_deletety"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            style="@style/bottom_iv"
+	            android:src="@drawable/deletety"
+	            android:background="@color/white"/>
+            
+	    </TableRow>
+        
+    </LinearLayout>
+
+</FrameLayout>
